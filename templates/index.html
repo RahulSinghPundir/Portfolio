@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+<section class="bgimage" id="home">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hero-text">
+                <h2 class="hero_title">Hi, it's me Rahul Singh Pundir</h2>
+                <p class="hero_desc">I am a Fresher Seeking for oppurtunity.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<div class="profile">
+    <section class="flip-box">
+        <a href="{{url_for('static',filename='RahulSinghPundir85Resume.pdf')}}">
+            <div class="flip-box-inner">
+                <div class="flip-box-front">
+                    <h2 class="profile-content">Resume</h2>
+                </div>
+                <div class="flip-box-back">
+                    <p class="profile-content">It includes a synopsis of my schooling, employment experience, talents, accomplishments, and
+                        awards.</p>
+                </div>
+            </div>
+        </a>
+    </section>
+
+    <section class="flip-box">
+        <a href="https://www.linkedin.com/in/rahul-singh-pundir-034b25216/" target="_blank">
+            <div class="flip-box-inner">
+                <div class="flip-box-front">
+                    <h2 class="profile-content">Linkedin</h2>
+                </div>
+                <div class="flip-box-back">
+                    <p class="profile-content">My profile describes how I view myself professionally. Here, I demonstrate my abilities by participating in a projects.</p>
+                </div>
+            </div>
+        </a>
+    </section>
+    <section class="flip-box">
+        <a href="https://github.com/RahulSinghPundir" target="_blank">
+            <div class="flip-box-inner">
+                <div class="flip-box-front">
+                    <h2 class="profile-content">Github</h2>
+                </div>
+                <div class="flip-box-back">
+                    <p class="profile-content">My profile page tells the story of my work by highlighting the repositories that I am 
+                        interested in, the contributions I have made, and the discussions I have had.</p>
+                </div>
+            </div>
+        </a>
+    </section>
+</div>
+<br>
+<hr>
+<br>
+
+<div class="container">
+    <section class="contact-us">
+        <h2 >Contact Us</h2><br>
+        <div>
+            <form method="POST" action="{{url_for('index')}}">
+                {{ form.csrf_token }}
+                <ul class="errors">
+                    {% for error in form.errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+                {{ form.name.label }}<br>
+                {{ form.name }}<br>
+                {{ form.email.label }}<br>
+                {{ form.email }}<br>
+                {% if form.email.errors %}
+                {% endif %}
+                {{ form.message.label }}<br>
+                {{ form.message }}<br>
+                {{ form.submit.label }}<br>
+                {{ form.submit }}<br>
+            </form>
+        </div>
+    </section>
+    
+    <section class="quick-links">
+        <ul>
+            <a href="{{url_for('static',filename='RahulSinghPundir85Resume.pdf')}}" download=""><li>Resume Download</li></a><br>
+            <a href="https://github.com/RahulSinghPundir"><li>Github</li></a><br>
+            <a href="https://www.linkedin.com/in/rahul-singh-pundir-034b25216/"><li>Linkedin</li></a><br>
+            <a href="/project"><li>Projects</li></a>
+        </ul>
+    </section>
+</div>
+
+<br>
+<hr>
+<br>
+
+
+{% endblock %}
