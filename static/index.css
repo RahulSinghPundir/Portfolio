@@ -1,17 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap');
+
 * {
     padding: 0;
     margin: 0;
+    text-align: justify;
 }
 
 body {
-    font-family: Arial, Tahoma, Serif;
+    /* background-image: url('backgroundimage.jpg'); */
+    background-position: center;
+    font-family: 'Josefin Sans', sans-serif;
     color: #ffffff;
     background-color: black;
 }
-a{
-    color:wheat;
+
+a {
+    color: #ffffff;
+    text-decoration: none;
 }
-a:hover{
+
+a:hover {
     color: rgb(122, 188, 208);
 }
 
@@ -28,6 +36,13 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 1rem 2rem;
+}
+nav img{
+    width:250px;
+    height:100px;
+}
+nav h2{
+    display: none;
 }
 
 nav ul {
@@ -99,15 +114,18 @@ nav a {
     align-items: center;
 }
 
-.profile-content{
+.profile-content {
     margin-top: 70px;
+    text-align: center;
+
 }
 
 .flip-box {
-    margin-top: -90px;
+    margin: -90px 50px 20px 20px;
     width: 300px;
     height: 200px;
-    border: 1px solid #f1f1f1;
+    border: 5px solid #f1f1f1;
+    border-radius: 25px;
     perspective: 1000px;
 }
 
@@ -139,7 +157,8 @@ nav a {
 
 /* Style the front side */
 .flip-box-front {
-    background: linear-gradient(rgb(94, 194, 211), rgba(188, 195, 203, 0.679));
+    background: linear-gradient(rgb(0 0 0), rgba(188, 195, 203, 0.679));
+    border-radius: 20px;
     /* background-color: #bbb; */
     color: rgb(255, 255, 255);
 }
@@ -147,7 +166,6 @@ nav a {
 
 /* Style the back side */
 .flip-box-back {
-    background-color: rgb(88, 144, 200);
     color: white;
     transform: rotateY(180deg);
 }
@@ -188,7 +206,9 @@ nav a {
     padding: 20px;
 }
 
-#name, #email, #message {
+#name,
+#email,
+#message {
     width: 100%;
     padding: 12px;
     border: 1px solid #ffffff;
@@ -220,7 +240,8 @@ input[type=submit]:hover {
     height: 300px;
     perspective: 1000px;
 }
-.quick-links a{
+
+.quick-links a {
     text-decoration: none;
     font-size: large;
 }
@@ -228,10 +249,116 @@ input[type=submit]:hover {
 
 
 
-/* Footer */
+
+/* Home Page End */
 
 
 
+
+/* Project Page Start */
+.project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-row-1 {
+    margin: 0px 50px 20px 20px;
+    width: 300px;
+    height: 200px;
+    border: 5px solid #ffffff;
+    border-radius: 25px;
+    perspective: 1000px;
+}
+
+#sentiment-analysis {
+    background-image: url("SentimentAnalysis/sentimentbg.jpg");
+    background-size: cover;
+}
+#sentiment-analysis:hover, #cartoonify:hover{
+    opacity: 0.8;
+    color: #ffffff;
+}
+#cartoonify{
+    background-image:url("Cartoonify/cartoonbg.jpg");
+    background-size: cover;
+}
+
+
+
+
+/* Project Page End */
+
+
+
+
+
+
+/* Sentiment Analysis Page */
+.project-page * {
+    margin: 0px 0px 0px 1.1rem;
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+}
+
+.project-page img {
+    margin-left: 350px;
+    width: fit-content;
+    height: 350px;
+}
+
+
+
+/* Cartoon Converter Start */
+.cartoon_converter {
+    display: flex;
+    margin: 0px 0px 0px 60px;
+}
+
+#cam_input #canvas_output {
+    border-style: solid;
+    width: 640px;
+    height:480px ;
+}
+
+#canvas_output {
+    border-style: solid;
+    margin: 0px 0px 0px 40px;
+}
+.cartoonify_btns{
+    display: flex;
+}
+
+
+#cartoon_btn_start, #cartoon_btn_stop,#cartoon_download {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 400px;
+}
+
+#cartoon_btn_start:hover,#cartoon_btn_stop:hover,#cartoon_download:hover{
+    background-color: #ffffff;
+    color: #4CAF50;
+}
+
+#cartoon_btn_stop{
+    margin-left:40px;
+}
+#cartoon_download{
+    margin-left:40px;
+}
+
+/* Cartoon Converter Ends*/
+
+/* Footer Start */
 
 
 
@@ -246,6 +373,7 @@ footer {
 footer a {
     margin-left: 40px;
 }
+/* Footer End */
 
 
 
@@ -253,8 +381,20 @@ footer a {
 
 
 @media only screen and (max-width: 600px) {
+    /* Basic Requirements like nav and footer */
+    hr{
+        width:29rem;
+    }
+    /* Set nav column wise */
     nav {
         flex-direction: column;
+    }
+    /* Remove Logo for mobile and display name */
+    nav img{
+        display: none;
+    }
+    nav h2{
+        display: flex;
     }
 
     nav ul {
@@ -264,5 +404,75 @@ footer a {
 
     nav li {
         padding: 0.5rem 0;
+    }
+
+    /* Hero Slider Removing background and adjusting font size */
+
+    .bgimage {
+       background-image: none;
+       margin: -60px -170px 0px 0px;
+    }
+    .hero_title {
+        display: block;
+        font-size: 2rem;
+    }
+    
+    .hero_desc {
+        font-size: 1.5rem;
+    }
+
+    /* Flip Boxes of Resume, Linkedin and Github set it to column wise */
+    .profile {
+        flex-direction: column;
+    }
+    
+    .flip-box {
+        margin: 0px -130px 20px 70px;
+        width: 90%;
+        height: 10rem;
+    }
+
+    /* Removing Quick links and adjust width and height of contact form. */
+    .container{
+        border: none;
+    }
+    .contact-us{
+        width: 100%;
+        border: none;
+        margin-left: 4rem;
+    }
+    .quick-links{
+        display: none;
+    }
+
+    /* Set Project Page boxes in column wise. */
+    .project{
+        flex-direction: column;
+    }
+    .project-page *{
+        margin:0px -10rem 0px 1rem;
+    }
+    .project-page img{
+        display: none;
+    }
+    /* Set Video and Canvas of Cartoonify project(boxes and buttons) to column and adjust there width and height. */
+    .cartoon_converter{
+        flex-direction: column;
+        margin: 0px 30px 0px 30px;
+    }
+    #cam_input{
+        width: 300px;
+        height: 300px;
+    }
+    #canvas_output{
+        margin-left: 0px;
+        /* width: 300px; */
+        /* height: 300px; */
+    }
+    .cartoonify_btns{
+        flex-direction: column;
+    }
+    #cartoon_btn_start, #cartoon_btn_stop, #cartoon_download {
+        margin: 2px 40px 2px 40px;
     }
 }

@@ -2,71 +2,37 @@
 
 {% block body %}
 
+<!--Section containg projects-->
 
-
-
-<div class="profile">
-    <section class="flip-box">
-        <a href="{{url_for('static',filename='RahulSinghPundir85Resume.pdf')}}" download>
-            <div class="flip-box-inner">
-                <div class="flip-box-front">
-                    <h2>Resume</h2>
+<div class="project">
+    <!--Cartoonify Project-->
+    <section class="project-row">
+        <a href="/Cartoonconverter">
+            <div class="project-row-1" id="cartoonify">
+                <div >
+                    <h2> <br> Cartoonify</h2>
                 </div>
-                <div class="flip-box-back">
-                    <p>It includes a synopsis of my schooling, employment experience, talents, accomplishments, and
-                        awards.</p>
+                <div >
+                    <p> <br> Developed image-to-cartoon conversion project using OpenCV and JavaScript.</p>
                 </div>
             </div>
         </a>
     </section>
 
-    <section class="flip-box">
-        <a href="https://www.linkedin.com/in/rahul-singh-pundir-034b25216/" target="_blank">
-            <div class="flip-box-inner">
-                <div class="flip-box-front">
-                    <h2>Linkedin</h2>
+    <!--Sentiment Analysis Project-->
+    <section class="project-row">
+        <a href="/Sentimentanalysis">
+            <div class="project-row-1" id="sentiment-analysis">
+                <div >
+                    <h2> <br> Sentiment Analysis</h2>
                 </div>
-                <div class="flip-box-back">
-                    <p>It includes a synopsis of my schooling, employment experience, talents, accomplishments, and
-                        awards.</p>
-                </div>
-            </div>
-        </a>
-    </section>
-    <section class="flip-box">
-        <a href="https://github.com/RahulSinghPundir" target="_blank">
-            <div class="flip-box-inner">
-                <div class="flip-box-front">
-                    <h2>Github</h2>
-                </div>
-                <div class="flip-box-back">
-                    <p>It includes a synopsis of my schooling, employment experience, talents, accomplishments, and
-                        awards.</p>
+                <div >
+                    <p> 
+                        <br>The article discusses the importance of social media in daily life, including staying in contact with family,
+                        accessing news and entertainment, and promoting businesses.</p>
                 </div>
             </div>
         </a>
     </section>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 {%endblock%}

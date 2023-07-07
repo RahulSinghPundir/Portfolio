@@ -1,32 +1,38 @@
+<!--Layout page contains basic requirements of every page like navigation and footer-->>
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rahul</title>
-    </head>
-    <body>
-        
-        <nav>
-            <a href="/"><h2>Rahul Singh Pundir</h2></a>
-            <ul>
-                <li><a class="active" href="/">Home</a></li>
-                <li><a href="/project">Project</a></li>
-            </ul>
-        </nav>
-        
-        {% block body %} {% endblock %}
-        
-        <footer>
-            <p>Author: Rahul Singh Pundir
-                <a href="rahulsinghpundir85@gmail.com">
-                    rahulsinghpundir
-                </a>
-            </p>
-        </footer>
 
-    </body>
+<head>
+    <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahul</title>
+</head>
+
+<body>
+
+    <nav>
+        <a href="/">
+            <img src="static/logo.jpg" alt="Logo">
+            <h2>Rahul Singh Pundir</h2>
+        </a>
+        <ul>
+            <li><a class="active" href="/">Home</a></li>
+            <li><a href="/project">Project</a></li>
+        </ul>
+    </nav>
+
+    {% block body %} {% endblock %}
+
+    <footer>
+        <p>Author:
+            &copy; Rahul Singh Pundir 2023
+        </p>
+
+    </footer>
+    <!--Script of the main javascript-->
+    <script src="{{url_for('static',filename='index.js')}}"></script>
+</body>
+
 </html>
-

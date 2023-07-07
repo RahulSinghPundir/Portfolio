@@ -1,15 +1,11 @@
 # importing libraries
-from flask import Flask,render_template,request,redirect,url_for
-
-# import flask forms
-from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField,TextAreaField
-from wtforms.validators import DataRequired, Email, Length
-from wtforms.fields import DateField, EmailField, TelField, SubmitField
+from flask import Flask,render_template,request
 
 # library for mails
 from flask_mail import Mail, Message
 
+# Importing inbuilts functions
+from contactform import *
 app = Flask(__name__)
 
 # configuration of mail
@@ -26,14 +22,6 @@ mail = Mail(app)
 app.config['SECRET_KEY'] = 'secrety007'
 
 
-# Login Form class with input fields
-class ContactForm(FlaskForm):
-    name=StringField(label='Name', id='name', validators=[DataRequired()])
-    email = EmailField(label='Email', id='email',validators=[DataRequired(),Email(message="Not valid email.")])
-    message=TextAreaField(label='Message',id='message',validators=[DataRequired(),Length(max=500)])
-    submit=SubmitField(label='Submit',id='submit')
-
-
 # Index page or Main page with form
 @app.route("/", methods=["GET","POST"])
 def index():
@@ -42,19 +30,29 @@ def index():
         # Send message to admin by contact form
         msg = Message(
                 'Hello from '+request.form['name'],
-                sender ='rahulsingpundir89@gmail.com',
-                recipients = ['rahulsingpundir85@gmail.com']
+                sender =request.form['email'],
+                recipients = ['rahulsingpundir89@gmail.com']
                )
         msg.body = request.form['message']
         mail.send(msg)
     return render_template("index.html", form=form)
     
 
-# Project Page
+# Project Page Template Rendering
 @app.route("/project")
 def project():
     return render_template("project.html")
 
+#Sentiment Analysis Template Rendering
+@app.route("/Sentimentanalysis")
+def Sentimentanalysis():
+    return render_template("Sentimentanalysis.html")
 
+#Cartoonify Template Rendering
+@app.route("/Cartoonconverter")
+def Cartoonconverter():
+    return render_template("CartoonConverter.html")
+
+# Running the app with debug
 app.run(debug=True)
 
