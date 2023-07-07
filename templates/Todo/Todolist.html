@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<script> 
+  if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
+</script>
+
+    <header class="todo-heading"><h1>To-Do List</h1></header>
+    <div class="todo-form-container">
+
+        <form action="/TodoList" method="POST" id="todo-form">
+            <div class="todo-form-input">
+              <label for="title" >Todo Title</label>
+              <input type="text"  name="title" aria-describedby="emailHelp"> 
+            </div>
+            <div class="todo-form-input">
+              <label for="desc">Todo Description</label>
+              <textarea type="text" name="desc" id="desc">Enter the Description</textarea>
+            </div>
+            
+        </form>
+        <button type="submit" class="todo-button" form="todo-form">Submit</button>
+    </div>
+    <div class="todo-container">
+        
+                {% if allTodo|length == 0 %}
+                   
+                <div class="no-todo" role="alert">
+                    No Todos found. Add your first todo now!
+                  </div>
+                    {% else %} 
+                    <table class="todo-list">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Actions</th>
+                          </tr>
+                        </thead>
+                        
+                        <tbody>
+              {% for todo in allTodo %}
+              <tr>
+                <th scope="row">{{loop.index}}</th>
+                <td>{{todo.title}}</td>
+                <td>{{todo.desc}}</td>
+                <td>{{todo.date_created}}</td>
+                <td id="todo-list-button">
+                  <a href="/update/{{todo.sno}}" type="button" class="todo-button">Update</button>
+                  <a href="/delete/{{todo.sno}}" type="button" class="todo-button">Delete</button>
+                
+                </td>
+              </tr>
+              
+              {% endfor %}
+            </tbody>
+            </table>
+              {% endif %}
+               
+           
+    </div>
+
+
+{%endblock%}

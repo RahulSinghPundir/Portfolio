@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="project-page">
+    <h1>Sentiment Analysis During Covid-19 using Machine Learning Techniques</h1><br>
+    <section class="description">
+        <p>The article discusses the importance of social media in daily life, including staying in contact with family,
+            accessing news and entertainment, and promoting businesses. However, the COVID-19 pandemic has disrupted
+            normal life, leading to lockdowns and restrictions on activities. Social media has played a crucial role
+            during the pandemic, allowing people to stay connected and seek help. However, it has also been a platform
+            for misinformation and vaccine hesitancy. Overall, the article highlights the significant impact of social
+            media on modern society, both in normal times and during crises.</p>
+    </section><br><br>
+    
+    <a href="https://huggingface.co/spaces/RahulSinghPundir/Sentiment-Analysis" target="_blank"><button >Try it</button></a>
+    <section class="downloadfiles">
+        <a href="{{url_for('static',filename='SentimentAnalysis/sentimentanalysismodel.ipynb')}}" download>Sentiment Analysis Model</a>
+        <a href="{{url_for('static',filename='SentimentAnalysis/imagesofsentimetanalysis.zip')}}" download>Images of Sentiment Analysis</a>
+        <a href="https://github.com/RahulSinghPundir/Sentiment-Analysis-During-Covid-19" target="_blank">Github Link</a>
+    </section>
+</div>
+
+
+
+{%endblock%}

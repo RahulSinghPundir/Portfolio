@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h1>Cartoonify</h1><br>
+<h3><b>It takes some time to load JavaScript and run the algorithm.</b></h3>
+<div class="cartoon_converter">
+    <video id="cam_input" height="480" width="640"></video><!--Video tag for taking and display video from user's camera-->
+    <canvas id="canvas_output"></canvas><!--Canvas for display the cartoon image after preproces by index.js javascript and openc.js-->
+</div>
+<br>
+<div class="cartoonify_btns"><!--Buttons for controling the video Stream-->
+    <button id="cartoon_btn_start" onclick="start_cartoon();">Start</button>
+    <button id="cartoon_btn_stop" onclick="stop_cartoon();">Stop</button>
+    <button id="cartoon_download" onclick="download_cartoon();">Download</button>
+</div>
+<!--Script of the Opencv for Cartoonify Project-->
+<script src="{{url_for('static',filename='Cartoonify/opencv.js')}}" onload="openCvReady();" async></script>
+{%endblock%}

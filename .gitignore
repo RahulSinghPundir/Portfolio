@@ -1,0 +1,6 @@
+/package
+/package-lock
+/__pycache__
+/.vscode
+/instance
+/node_modules

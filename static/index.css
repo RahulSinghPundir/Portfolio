@@ -184,17 +184,16 @@ nav a {
 
 .container {
     margin: 0px 10px 0px 10px;
-    height: 400px;
+    height: 50%;
     border: solid;
 }
 
 
 
 .contact-us {
-    border-right: solid;
+    /* border-right: solid; */
     width: 60%;
-    height: 400px;
-    perspective: 1000px;
+    height: 40%;
 }
 
 .contact-us h2 {
@@ -235,10 +234,7 @@ input[type=submit]:hover {
 }
 
 .quick-links {
-    margin: -300px 0 0 932px;
-    width: 40%;
-    height: 300px;
-    perspective: 1000px;
+    margin: 0 0 0 65%;
 }
 
 .quick-links a {
@@ -258,7 +254,8 @@ input[type=submit]:hover {
 /* Project Page Start */
 .project {
     display: flex;
-    justify-content: center;
+    flex-flow: wrap;
+    overflow-wrap: anywhere;
     align-items: center;
 }
 
@@ -271,18 +268,11 @@ input[type=submit]:hover {
     perspective: 1000px;
 }
 
-#sentiment-analysis {
-    background-image: url("SentimentAnalysis/sentimentbg.jpg");
-    background-size: cover;
-}
-#sentiment-analysis:hover, #cartoonify:hover{
+.project-row-1:hover{
     opacity: 0.8;
     color: #ffffff;
 }
-#cartoonify{
-    background-image:url("Cartoonify/cartoonbg.jpg");
-    background-size: cover;
-}
+
 
 
 
@@ -299,13 +289,27 @@ input[type=submit]:hover {
     margin: 0px 0px 0px 1.1rem;
     display: flex;
     justify-items: center;
-    flex-direction: column;
+    /* flex-direction: column; */
+    text-align: center;
+}
+.project-page{
+    background-color: #383838;
 }
 
 .project-page img {
     margin-left: 350px;
     width: fit-content;
     height: 350px;
+}
+.project-page button{
+    background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 
@@ -357,6 +361,73 @@ input[type=submit]:hover {
 }
 
 /* Cartoon Converter Ends*/
+
+
+
+/* To do list start */
+
+.todo-heading{
+    text-align: center;
+}
+.todo-form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid white;
+    padding: 1rem;
+}
+.no-todo{
+    margin-top: 5rem;
+}
+.todo-form-container form{
+    display: flex;
+    white-space-collapse: break-spaces;
+}
+.todo-form-input input,.todo-button{
+    font-size: 1.4rem;
+    border-radius: 1rem;
+}
+#desc{
+    height: 5rem;
+    padding: 1rem 1rem;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+}
+.todo-button{
+    color: white;
+    background: rgb(235, 119, 31);
+    cursor: pointer;
+    margin-left: 0.5rem;
+    padding: 0.1rem 1rem 0.1rem 1rem;
+    margin-top: 1rem;
+}
+
+.todo-button:hover{
+    color: rgb(235, 119, 31);
+    background: white;
+}
+.todo-container{
+    display: flex;
+    place-content: center;
+    padding: 1rem;
+}
+.todo-list{
+    border-spacing: 10px;
+    border-collapse: separate;
+}
+td{
+    overflow-wrap: anywhere;
+}
+#todo-list-button{
+    overflow-wrap: break-word;
+    display: inline-flex;
+    flex-flow: wrap;
+}
+
+/* To do list End */
 
 /* Footer Start */
 
@@ -435,6 +506,7 @@ footer a {
     /* Removing Quick links and adjust width and height of contact form. */
     .container{
         border: none;
+        margin-bottom: 40px;
     }
     .contact-us{
         width: 100%;
@@ -442,6 +514,7 @@ footer a {
         margin-left: 4rem;
     }
     .quick-links{
+        margin: -300px 0 0 514px;
         display: none;
     }
 
@@ -450,7 +523,7 @@ footer a {
         flex-direction: column;
     }
     .project-page *{
-        margin:0px -10rem 0px 1rem;
+        width: 90%;
     }
     .project-page img{
         display: none;
@@ -475,4 +548,10 @@ footer a {
     #cartoon_btn_start, #cartoon_btn_stop, #cartoon_download {
         margin: 2px 40px 2px 40px;
     }
+
+    .todo-form-container, .todo-form-container form{
+        flex-flow: column;
+
+    }
+
 }
